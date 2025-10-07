@@ -1,4 +1,4 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -16,15 +16,7 @@ define rec = Character("Receptionist Jacob")
 # Declare Backgrounds
 image coffeeshop_bg = "coffeeshop.jpg"
 
-# Red Document - Image Button
-screen red_document:
-    imagebutton:
-        xanchor 0.5
-        yanchor 0.5
-        xpos 0.5
-        ypos 0.28
-        idle "red_document.jpg"
-        action [Hide("red_document"), Jump("document")]
+
 
 # Initialization
 default correct_answer = 0
@@ -251,12 +243,9 @@ label investigation:
     s "Ah, indeed. I just need to fix a few things here and there. This room cleans itself up eventually."
     s "Would you mind getting the document on the table? They told me it was color red with dirt patches around it. It's the only one that feels like sandpaper."
 
-    window hide
-    call screen red_document
-
+    me "Oh, okay."
 
 label document:
-    window show
     me "Here it is, Sherlock. The red document. I'm assuming you want me to read the case file for you, since your eyes are... otherwise engaged."
 
     s "Who else would read it in this room? Your sarcasm is wasted on the important task at hand. Now read, before I decide this case is too simple for my talents."
